@@ -19,3 +19,11 @@ while (i <= 9) {
     document.write('');
     i++;
 }
+// nhập n : tính tổng s=1+2+3+...n
+var n = prompt("nhập giá trị của n : ");
+var sum =0 ; 
+for(var i = 1 ; 1 <=n ;i++){
+    sum +=i;
+}
+document.write('tỏng s = '+sum);
+
