@@ -1,7 +1,6 @@
 function playGame(lcNguoi) {
     var arr = ['Rock', 'Paper', 'Scissors'];
     var lcMay = Math.floor(Math.random() * 3);
-
     var ketqua;
 
     if (lcNguoi === lcMay) {
