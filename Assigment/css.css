@@ -40,8 +40,8 @@ li {
 
 li a {
     text-decoration: none;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 li a:hover{
     font-size: 30px;
@@ -66,3 +66,44 @@ button{
 h3{
     text-align: center;
 }
+
+
+
+
+
+/*  */
+.sanpham {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .col-md-4 {
+    flex: 1 1 25%;
+    margin: 0 10px;
+  }
+  
+  .ad {
+    height: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+  
