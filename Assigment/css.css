@@ -50,6 +50,55 @@ li a:hover{
 button{
     margin-left: 150px;
 }
+.container {
+  position: relative;
+}
+
+.divSlineShow {
+  position: relative;
+  width: 980px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.divSlineShow img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.divSlineShow img.active {
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.arrow.center {
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
 .noidungform {
     background-color: aqua;
     margin: 0 auto;
