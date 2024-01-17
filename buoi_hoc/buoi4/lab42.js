@@ -21,7 +21,7 @@ function sinhVien(maSV, ht, diem) {
 
 // tạo đối tượng 
 sinhVien['sv1'] = new sinhVien('s1', 'Vũ Văn phúc', 9);
-sinhVien['sv2'] = new sinhVien('s3', 'Vũ Văn phú', 9);
+sinhVien['sv2'] = new sinhVien('s2', 'Vũ Văn phú', 9);
 sinhVien['sv3'] = new sinhVien('s3', 'Vũ Văn phụng', 9);
 // in ra các đối tượng 
 for (var x in sinhVien) {
