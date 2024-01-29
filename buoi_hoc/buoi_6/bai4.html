@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo2</title>
+    <style>
+      body {
+        padding-left: 500px;
+        padding-top: 50px;
+      }
+
+      .slide {
+        border: 1px solid green;
+        background-color: #d6dcee;
+        border-radius: 10px;
+        width: 500px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body align="center" onload="loadanh()">
+    <div class="slide">
+      <p>
+        <input type="button" value="về đầu " onclick="first()" />
+        <input type="button" value="lùi " onclick="back()" />
+        <input type="button" value="tiến" onclick="next()" />
+        <input type="button" value="về cuối " onclick="last()" />
+        <input type="button" value="chạy " onclick="start()" />
+        <input type="button" value="dừng " onclick="stop()" />
+      </p>
+
+      <img
+        src="folderAnh/0.jpg" width="300px" height="500px" id="img1" onmouseover="anhmoi()" onmouseout="anhcu()"
+      />
+    </div>
+    <script>
+    // LOAD ANH BAI 1
+    //   var amoi = new Image();
+    //   var acu = new Image();
+    //   function loadanh() {
+    //     amoi.src = "folderAnh/4.jpg";
+    //     acu.src = "folderAnh/0.jpg";
+    //   }
+    //   function anhmoi() {
+    //     document.img1.src = amoi.src;
+    //   }
+    //   function anhcu() {
+    //     document.img1.src = acu.src;
+    //   } 
+
+
+    // BAI 2 
+    // LOAD ẢNH 
+    var anhrr=[];
+    var index=0;
+    function loadanh() {
+        for(var i=0;i<7;i++){
+            anhrr[i]= new Image();
+            anhrr[i].src='folderAnh/'+i+'.jpg';
+        }
+    }
+    // VỀ ĐẦU 
+    function first(){
+        index=0;
+        document.getElementById("img1").src=anhrr[index].src;
+    }
+    // VỀ CUỐI 
+    function last(){
+        index=anhrr.length-1;
+        document.getElementById("img1").src=anhrr[index].src;
+    }
+    // LÙI
+    function back(){
+        if(index>0){
+        index -= 1
+        document.getElementById("img1").src=anhrr[index].src;
+        }
+    }
+    // TIÉN
+    function next(){
+        if(index<anhrr.length){
+        index += 1
+        }
+        document.getElementById("img1").src=anhrr[index].src;
+
+    }
+    // start (KHI TRONG ĐỀ CÓ ĐIỀU KIỆN KHI LOAD TRANG TỰ ĐỘNG CHẠY THÌ DÙNG PHƯƠNG THỨC NÀY )
+    function start(){
+        loadanh();
+        document.getElementById("img1").src=anhrr[index].src;
+        index++;
+        // NẾU ẢNH = VỊ TRÍ CUỐI THÌ QUAY VỀ ĐẦU 
+        if(index==anhrr.length){
+            index=0;
+        }
+        t=setTimeout('start()',1000);
+    }
+    // STOP
+    function stop(){
+        clearTimeout(t);
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .x {
+          background-color: aqua;
+        }
+        .o {
+          background-color: yellow;
+        }
+        button {
+          width: 60px;
+          height: 60px;
+          font-size: 20px;
+        }
+      </style>
+</head>
+<body>
+    <table align="center">
+        <tr>
+          <td><button id="0" onclick="mark(0)"></button></td>
+          <td><button id="1" onclick="mark(1)"></button></td>
+          <td><button id="2" onclick="mark(2)"></button></td>
+        </tr>
+        <tr>
+          <td><button id="3" onclick="mark(3)"></button></td>
+          <td><button id="4" onclick="mark(4)"></button></td>
+          <td><button id="5" onclick="mark(5)"></button></td>
+        </tr>
+        <tr>
+          <td><button id="6" onclick="mark(6)"></button></td>
+          <td><button id="7" onclick="mark(7)"></button></td>
+          <td><button id="8" onclick="mark(8)"></button></td>
+        </tr>
+      </table>
+      <script type="text/javascript">
+        var flag = true; 
+        var count = 0;
+        var board = Array(9).fill("");
+        var winningCombinations = [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 3, 6],
+          [1, 4, 7],
+          [2, 5, 8],
+          [0, 4, 8],
+          [2, 4, 6]
+        ];
+        function checkWin() {
+          for (var i = 0; i < winningCombinations.length; i++) {
+            if (
+              board[winningCombinations[i][0]] !== "" &&
+              board[winningCombinations[i][0]] === board[winningCombinations[i][1]] &&
+              board[winningCombinations[i][0]] === board[winningCombinations[i][2]]
+            ) {
+              return true;
+            }
+          }
+          return false;
+        }
+        function mark(index) {
+          var cell = document.getElementById(index.toString());
+          if (cell.innerHTML === "") {
+            if (flag) {
+              cell.innerHTML = "X";
+              cell.classList.add("x");
+              board[index] = "X";
+            } else {
+              cell.innerHTML = "O";
+              cell.classList.add("o");
+              board[index] = "O";
+            }
+            flag = !flag;
+            count++;
+            cell.onclick = null;
+            if (checkWin() || count === 8) {
+              alert("Game over!");
+              location.reload();
+            }
+          }
+        }
+      </script>
+</body>
+</html>

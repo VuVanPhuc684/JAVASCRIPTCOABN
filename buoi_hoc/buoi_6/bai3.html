@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check | Uncheck</title>
+  </head>
+  <body>
+    <h1>Check | Uncheck</h1>
+    <table border="1" cellspacing="0">
+      <tr>
+        <td><input type="checkbox" name="a" id="" /></td>
+        <td>Tran Minh Thanh</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="a" id="" /></td>
+        <td>Le Dinh Tuan</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="a" id="" /></td>
+        <td>Vu Van Phuc</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="a" id="" /></td>
+        <td>Nguyen Ngoc Nam Phong</td>
+      </tr>
+    </table>
+    <br>
+    <input type="button" value="Chọn hết" onclick="chon()" />
+    <input type="button" value="Bỏ chọn" onclick="bochon()" />
+    <script>
+        function chon(){
+            var chekarr = document.getElementsByName('a');
+            for(var i=0 ;i<chekarr.length;i++) {
+                chekarr[i].checked=true;
+            }
+        }
+        function bochon(){
+            var chekarr = document.getElementsByName('a');
+            for(var i=0 ;i<chekarr.length;i++) {
+                chekarr[i].checked=false;
+            }
+        }
+    </script>
+  </body>
+</html>
