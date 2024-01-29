@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span {
+        color: red;
+    }
+</style>
+
+<body>
+    <form action="" name="MyForm" onsubmit="return VaLiDate()">
+        <table>
+            <tr>
+                <td>EnterName</td>
+                <td>
+                    <input type="text" name="HoTen">
+                    <span id="tbhoTen"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>EnterEmail</td>
+                <td>
+                    <input type="text" name="Email">
+                    <span id="tbEmail"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>EnterPassWord</td>
+                <td>
+                    <input type="text" name="PassWord">
+                    <span id="tbPassWord"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>ConfirmPass</td>
+                <td>
+                    <input type="text" name="ConfirmPass">
+                    <span id="tbConfirmPass"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>SoPhone</td>
+                <td>
+                    <input type="text" name="phone">
+                    <span id="tbphone"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>noi dung </td>
+                <td>
+                    <input type="text" name="NouDung">
+                    <span id="tbnoidung"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>passOld</td>
+                <td>
+                    <input type="text" name="passOld">
+                    <span id="tbpassold"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Dang ky ">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!-- code js  -->
+    <script>
+        function VaLiDate() {
+            var status = false;
+            // KIEM TRA HO TEN  
+            var HoTen = document.MyForm.HoTen.value;
+            if (HoTen == "") {
+                document.getElementById("tbhoTen").innerHTML = "khong de trong ho ten ";
+                status = false;
+            } else {
+                document.getElementById("tbhoTen").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA EMAIL 
+            var Email = document.MyForm.Email.value;
+            var reemail = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");// bieu thuc chinh quy 
+            if (!Email.match(reemail)) {
+                document.getElementById("tbEmail").innerHTML = "email khong dung dinh dang";
+                status = false;
+            }
+            else {
+                document.getElementById("tbEmail").innerHTML = " ";
+                status = true;
+            }
+            // KIEM TRA MAT KHAU 
+            var PassWord = document.MyForm.PassWord.value;
+            if (PassWord.length < 8) {
+                document.getElementById("tbPassWord").innerHTML = "pass toi thieu 8 ky tu ";
+                status = false;
+            
+            } else {
+                document.getElementById("tbPassWord").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA CONFIRM PASS
+            var ConfirmPass = document.MyForm.ConfirmPass.value;
+            if (ConfirmPass == ""|| ConfirmPass!=PassWord) {
+                document.getElementById("tbConfirmPass").innerHTML = "Error  password ";
+                status = false;
+            } else {
+                document.getElementById("tbConfirmPass").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA SO PHONE 
+            var phone = document.MyForm.phone.value;
+            var resdt=new RegExp("0\\d{9,10}","g");
+            if (!phone.match(resdt)) {
+                document.getElementById("tbphone").innerHTML = "Error phone";
+                status = false;
+            } else {
+                document.getElementById("tbphone").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA NOI DUNG 
+            var NouDung = document.MyForm.NouDung.value;
+            var rend = new RegExp("(?=.*\\d)(?=.*[A-Z])[\\w]{6,12}", "g");
+            if (!NouDung.match(rend)) {
+                document.getElementById("tbnoidung").innerHTML = "it nhất 1 ký tự số,1 ký tự viết hoa , độ dài từ 6-12 ký tự";
+                status = false;
+            } else {
+                document.getElementById("tbnoidung").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA PASS OLD 
+            var passOld = document.MyForm.passOld.value;
+            var repassold = new RegExp("Md18401@","g");
+            if (!passOld.match(repassold)) {
+                document.getElementById("tbpassold").innerHTML = "mat khau cu la : Md18401@";
+                status = false;
+            } else {
+                document.getElementById("tbpassold").innerHTML = "";
+                status = true;
+            }
+            return status;
+        }
+    </script>
+</body>
+</html>
