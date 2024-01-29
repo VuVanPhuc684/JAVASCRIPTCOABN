@@ -1,0 +1,89 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center" onload="chay()">
+    <div class="container">
+        <p>
+            <input type="button" value="tiến" onclick="tien()">
+            <input type="button" value="lùi" onclick="lui()">
+            <input type="button" value="chạy" onclick="chay()">
+            <input type="button" value="dừng " onclick="dung()">
+            <input type="button" value="về đầu " onclick="dau()">
+            <input type="button" value="về cuối " onclick="cuoi()">
+        </p>
+        <img src="../ontap/fileanh/0.jpg" width="200px" height="200px" id="img1" alt="ảnh đầu ">
+    </div>
+    <script>
+        var arr = [];
+        var index = 0;
+        function load() {
+            for (var i = 0; i < 5; i++) {
+                arr[i] = new Image();
+                arr[i].src = "../ontap/fileanh/"+i+".jpg"
+            }
+        }
+        // về đầu 
+        function dau(){
+            index=0;
+            document.getElementById("img1").src=arr[index].src;
+        }
+        // về cuối 
+        function cuoi() {
+            index=arr.length-1;
+            document.getElementById("img1").src=arr[index].src;
+        }
+        // lùi 
+        function lui(params) {
+            if (index>0) {
+                index-=1;
+                document.getElementById("img1").src=arr[index].src;
+            }
+        }
+        // tiến
+        function tien() {
+            if (index<arr.length) {
+                index+=1;
+            }
+            document.getElementById("img1").src=arr[index].src;
+        }
+        // chạy 
+        function chay() {
+            load();
+            document.getElementById("img1").src=arr[index].src;
+            index++;
+            if (index==arr.length) {
+                index=0;
+            }
+             t = setTimeout('chay()',100);
+        }
+        // dừng
+        function dung() {
+           clearTimeout(t);
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+<!-- ============================================= -->
+<!-- sline Show -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlineShow</title>
+</head>
+<body>
+    
+</body>
+</html>
