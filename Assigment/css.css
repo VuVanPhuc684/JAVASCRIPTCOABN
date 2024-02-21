@@ -100,11 +100,13 @@ button{
   transform: translateX(-50%) translateY(-50%);
 }
 .noidungform {
-    background-color: aqua;
+    background-color:  bisque;;
     margin: 0 auto;
-    width: 300px;
-    border: 2px solid black;
+    width: 900px;
+    height: 700px;
+    border: 20px solid pink;
     padding: 20px;
+    border-radius: 50px;
 }
 .ket{
     height: 50px;
@@ -156,3 +158,8 @@ h3{
     font-size: 14px;
   }
   
+
+  .giohang {
+    display: flex;
+    
+}

@@ -7,6 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="css.css">
 </head>
+<style>
+    span {
+        color: red;
+    }
+</style>
 
 <body>
     <div class="container">
@@ -23,49 +28,121 @@
             </ul>
         </div>
         <div class="noidungform">
-            <form action="">
-                <p>1.nhập tên</p>
-                <input type="nhập tên "> <br>
-                <p>2.nhập số điện thoại</p>
-                <input type="nhập số điện thoại "> <br>
-                <p>3.nhập email</p>
-                <input type="email"> <br>
-                <p>4.nhập địa chỉ </p>
-                <label>
-                    <input type="checkbox" name="option1" value="Option 1">
-                    Hà Nội
-                </label>
-                <br>
-                <label>
-                    <input type="checkbox" name="option2" value="Option 2">
-                    Thành phố HCM
-                </label>
-                <br>
-                <br>
-                <label for="loai" style="margin-right: 30px;">Chọn loại:</label>
-                <select id="loai" name="loai" >
-                    <option value="loai1">Loại 1</option>
-                    <option value="loai2">Loại 2</option>
-                    <option value="loai3">Loại 3</option>
-                    <option value="loai4">Loại 4</option>
-                </select>
-                <br>
-                <br>
-                <p>giới tính : </p>
-                <label>
-                    <input type="radio" name="loai" value="loai1"> Nam
-                </label>
-                <br>
-                <label>
-                    <input type="radio" name="loai" value="loai2"> nữ
-                </label>
-                <br>
-                <br>
-                <button style="background-color: rgb(31, 226, 112); width: 100px;" >save</button>
+            <marquee behavior="" direction="">
+                <h1 style="color: aqua;">ĐIỀN THÔNG TIN CỦA BẠN VÀO FORM SAU </h1>
+            </marquee>
+            <form action="" name="MyForm" onsubmit="return VaLiDate()" style="margin-left: 200px;">
+                <table>
+                    <tr>
+                        <td>
+                            <h3>NHẬP HỌ VÀ TÊN :</h3>
+                        </td>
+                        <td>
+                            <input type="text" name="HoTen">
+                            <span id="tbhoTen"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <H3>NHẬP EMAIL:</H3>
+                        </td>
+                        <td>
+                            <input type="text" name="Email">
+                            <span id="tbEmail"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <H3>NHẬP PASS WORD :</H3>
+                        </td>
+                        <td>
+                            <input type="text" name="PassWord">
+                            <span id="tbPassWord"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <H3>NHẬP LẠI PASS :</H3>
+                        </td>
+                        <td>
+                            <input type="text" name="ConfirmPass">
+                            <span id="tbConfirmPass"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <H3>NHẬP SỐ ĐIỆN THOẠI :</H3>
+                        </td>
+                        <td>
+                            <input type="text" name="phone">
+                            <span id="tbphone"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <H3>NƠI GHI CHÚ :</H3>
+                        </td>
+                        <td>
+                            <input type="text" name="NouDung">
+                            <span id="tbnoidung"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <H3>GIỚI TÍNH :</H3>
+                        </td>
+                        <td>
+                            <input type="radio" name="gioitinh">Nam
+                            <input type="radio" name="gioitinh">Nữ
+                            <span id="tbgioitinh"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <H3>CHỌN ĐỘ TUỔI :</H3>
+                        </td>
+                        <td>
+                            <select name="tuoi">
+                                <option value=""></option>
+                                <option value="">18 tuổi</option>
+                                <option value="">19 tuổi</option>
+                                <option value="">20 tuổi </option>
+                                <option value="">khác</option>
+                            </select>
+                            <span id="tbtuoi"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <H3>ĐỊA ĐIỂM :</H3>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="diadiem">Ngoại Thành
+                            <input type="checkbox" name="diadiem">Nội Thành
+                            <span id="tbdiadiam"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="ĐĂNG KÝ "
+                                style="height: 50PX;width: 150PX;border-radius: 20PX;">
+                        </td>
+                    </tr>
+                </table>
             </form>
         </div>
-       <div class="ket"><h3>phucvvph34858@fpt.edu.vn</h3></div>
+        <div class="ket">
+            <h3>phucvvph34858@fpt.edu.vn</h3>
+        </div>
     </div>
+    <script src="slineShow.js"></script>
 </body>
 
 </html>
