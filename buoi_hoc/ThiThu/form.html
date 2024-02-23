@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thi thử form ph34858</title>
+</head>
+<style>
+    span {
+        color: red;
+    }
+</style>
+
+<body>
+    <form action="" name="MyForm" onsubmit="return VaLiDate()">
+        <table>
+            <tr>
+                <td>EnterName</td>
+                <td>
+                    <input type="text" name="HoTen">
+                    <span id="tbhoTen"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter user</td>
+                <td>
+                    <input type="text" name="user">
+                    <span id="tbuser"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" name="Email">
+                    <span id="tbEmail"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>SDT</td>
+                <td>
+                    <input type="text" name="phone">
+                    <span id="tbphone"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>New PassWord</td>
+                <td>
+                    <input type="text" name="PassWord">
+                    <span id="tbPassWord"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>năm đăng ký </td>
+                <td>
+                    <input type="text" name="nam">
+                    <span id="tbnam"></span>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Dang ky ">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!-- code js  -->
+    <script>
+        function VaLiDate() {
+            var status = false;
+            // KIEM TRA HO TEN  
+            var HoTen = document.MyForm.HoTen.value;
+            if (HoTen == "") {
+                document.getElementById("tbhoTen").innerHTML = "khong de trong ho ten ";
+                status = false;
+            } else {
+                document.getElementById("tbhoTen").innerHTML = "";
+                status = true;
+            }
+            // KIỂM TRA USER 
+            var user = document.MyForm.user.value;
+            var rend = new RegExp("(?=.*\\d)(?=.*[A-Z])[\\w]{,1}", "g");
+            if (!user.match(rend)) {
+                document.getElementById("tbuser").innerHTML = "it nhất 1 ký tự số,1 ký tự viết hoa , độ dài từ 3-11 ký tự";
+                status = false;
+            } else {
+                document.getElementById("tbuser").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA EMAIL 
+            var Email = document.MyForm.Email.value;
+            var reemail = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");// bieu thuc chinh quy 
+            if (!Email.match(reemail)) {
+                document.getElementById("tbEmail").innerHTML = "email khong dung dinh dang";
+                status = false;
+            }
+            else {
+                document.getElementById("tbEmail").innerHTML = " ";
+                status = true;
+            }
+            // KIEM TRA SO PHONE 
+            var phone = document.MyForm.phone.value;
+            var resdt = new RegExp("0\\d{9,10}", "g");
+            if (!phone.match(resdt)) {
+                document.getElementById("tbphone").innerHTML = "Error phone";
+                status = false;
+            } else {
+                document.getElementById("tbphone").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA MAT KHAU 
+            var PassWord = document.MyForm.PassWord.value;
+            if (PassWord.length < 8) {
+                document.getElementById("tbPassWord").innerHTML = "pass toi thieu 8 ky tu ";
+                status = false;
+
+            } else {
+                document.getElementById("tbPassWord").innerHTML = "";
+                status = true;
+            }
+
+            // KIEM TRA NOI DUNG 
+            var nam = document.MyForm.nam.value;
+            var number = /^\d+$/; // Biểu thức chính quy kiểm tra nội dung là số
+            if (nam.trim() === "" || !nam.match(number)) {
+                document.getElementById("tbnam").innerHTML = "Năm  phải là số và không được bỏ trống";
+                status = false;
+            } else {
+                document.getElementById("tbnam").innerHTML = "";
+                status = true;
+            }
+            return status;
+        }
+    </script>
+</body>
+
+</html>
