@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai1</title>
+</head>
+<body align="center" onload="Run()">
+    <div class="container" ">
+        <input type="button" value="Previous" onclick="Previous()">
+        <img src="ANH/0.jpg" alt="dây là ảnh  đầu " width="700px" height="300px" id="anh1">
+        <input type="button" value="Next" onclick="Next()">
+    </div>
+    <script>
+        var ARR=[];
+        var index=0;
+        // load ảnh
+        function Load(){
+            for (var i = 0; i < 5; i++) {
+                ARR[i] = new Image();
+                ARR[i].src = "ANH/"+i+".jpg"
+            }
+        }
+        // chạy tự động 
+        function Run(){
+            Load();
+            document.getElementById('anh1').src=ARR[index].src;
+            index++;
+            if(index==ARR.length){
+                index=0;
+            }
+            t=setTimeout('Run()',300);
+        }
+        // lùi 
+        function Previous() {
+            if(index>0){
+                index-=1;
+                document.getElementById('anh1').src=ARR[index].src;
+            }
+        }
+        // tiến 
+        function Next(){
+            if(index<ARR.length){
+                index+=1;
+            }
+            document.getElementById('anh1').src=ARR[index].src;
+        }
+    </script>
+</body>
+</html>

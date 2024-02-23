@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body style="margin-left:750px ;">
+    <div class="container" style="height: 500px;width: 500px;border-radius: 1px;border-color: black ;border-width: 1px;border-style:solid ;">
+        <h3 style="text-align: center;">Đăng ký thành viên </h3>
+        <form action="" onsubmit="return Validate()" name="mohinhform">
+            <table>
+                <tr>
+                    <td>Họ tên </td>
+                    <td><input type="text" name="hoten" ></td>
+                    <td><span id="tbhoTen"></span></td>
+                </tr>
+                <tr>
+                    <td>Email </td>
+                    <td><input type="text" name="email" ></td>
+                    <td><span id="tbemail"></span></td>
+                </tr>
+                <tr>
+                    <td>số điện thoại  </td>
+                    <td><input type="text" name="sdt" ></td>
+                    <td><span id="tbsdt"></span></td>
+                </tr>
+                <tr>
+                    <td>user </td>
+                    <td><input type="text" name="user" ></td>
+                    <td><span id="tbuer"></span></td>
+                </tr>
+                <tr>
+                    <td>pass </td>
+                    <td><input type="text" name="pass" ></td>
+                    <td><span id="tbpass"></span></td>
+                </tr>
+                <tr>
+                    <td>repass </td>
+                    <td><input type="text" name="repass" ></td>
+                    <td><span id="tbrepss"></span></td>
+                </tr>
+                <tr>
+                    <td>bạn biết chúng tôi  </td>
+                    <td><input type="radio" name="diadiem" id="" >Bạn giới thiệu </td>
+                    <td><input type="radio" name="diadiem" id="" >qua fb</td>
+                    <td><span id="tbdd"></span></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Đăng ký "></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function Validate(){
+            var trangthai=false;
+            // kiểm tra tên 
+            var hoten=document.mohinhform.hoten.value;
+            if(hoten==""){
+                document.getElementById("tbhoTen").innerHTML="không để trống trường này ";
+                trangthai=false;
+            }else{
+                document.getElementById("tbhoTen").innerHTML=" ";
+                trangthai=true;
+            }
+            // kiem tra mail 
+               var email=document.mohinhform.email.value;
+            if(email==""){
+                document.getElementById("tbemail").innerHTML="không để trống trường này ";
+                trangthai=false;
+            }else{
+                document.getElementById("tbemail").innerHTML=" ";
+                trangthai=true;
+            }
+            // sdt
+            var sdt=document.mohinhform.sdt.value;
+            if(sdt==""){
+                document.getElementById("tbsdt").innerHTML="không để trống trường này ";
+                trangthai=false;
+            }else{
+                document.getElementById("tbsdt").innerHTML=" ";
+                trangthai=true;
+            }
+            // user
+            var user=document.mohinhform.user.value;
+            if(user==""){
+                document.getElementById("tbuer").innerHTML="không để trống trường này ";
+                trangthai=false;
+            }else{
+                document.getElementById("tbuer").innerHTML=" ";
+                trangthai=true;
+            }
+            // pass
+            var pass=document.mohinhform.pass.value;
+            if(pass==""){
+                document.getElementById("tbpass").innerHTML="không để trống trường này ";
+                trangthai=false;
+            }else{
+                document.getElementById("tbpass").innerHTML=" ";
+                trangthai=true;
+            }
+            // repass 
+            var repass=document.mohinhform.repass.value;
+            if(repass==""){
+                document.getElementById("tbrepss").innerHTML="không để trống trường này ";
+                trangthai=false;
+            }else{
+                document.getElementById("tbrepss").innerHTML=" ";
+                trangthai=true;
+            }
+            // diadiem
+            var diadiem=document.mohinhform.diadiem.value;
+            if(diadiem==""){
+                document.getElementById("tbdd").innerHTML="không để trống trường này ";
+                trangthai=false;
+            }else{
+                document.getElementById("tbdd").innerHTML=" ";
+                trangthai=true;
+            }
+            return trangthai;
+        }
+    </script>
+</body>
+</html>
