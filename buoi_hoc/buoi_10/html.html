@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Thành Viên </title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="width: 400px;height: 500px;background-color: #f3f9ff;border: 2px solid black;
+    padding: 20px;
+    border-radius: 50px;margin: auto;">
+        <marquee behavior="" direction="">Đăng Ký Thành Viên</marquee>
+        <form action="" name="myform" onsubmit="return VaLiDate()">
+            <table>
+                <tr>
+                    <td>Họ tên </td>
+                    <td>
+                        <input type="text" name="HoTen">
+                        <span id="tbhoTen"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>email</td>
+                    <td>
+                        <input type="text" name="Email">
+                        <span id="tbEmail"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>số điện thoại </td>
+                    <td>
+                        <input type="text" name="Sdt">
+                        <span id="tbSdt"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User</td>
+                    <td>
+                        <input type="text" name="User">
+                        <span id="tbUser"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pass</td>
+                    <td>
+                        <input type="text" name="Pass">
+                        <span id="tbPass"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Repass</td>
+                    <td>
+                        <input type="text" name="Repass">
+                        <span id="tbRepass"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>bạn biết chúng tôi </td>
+                    <td><input type="radio" name="chon" id="">Bạn giới thiệu
+                        <input type="radio" name="chon" id="">qua fb
+                    </td>
+                    <td><span id="tbchon"></span></td>
+                </tr>
+                <tr>
+                    <td>Phí Học </td>
+                    <td>
+                        <input type="text" name="Email">
+                        <span id="tbEmail"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Khóa Học </td>
+                    <td>
+                        <select name="KhoaHoc">
+                            <option value="">Chọn Khóa Học </option>
+                            <option value="">18 buôi</option>
+                            <option value="">19 buôi</option>
+                            <option value="">20 buôi </option>
+                            <option value="">khác</option>
+                        </select>
+                        <span id="tbKhoaHoc"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Học phí</td>
+                    <td>
+                        <input type="text" name="HocPhi">
+                        <span id="tbHocPhi"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Dang ky ">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function VaLiDate() {
+            var status = false;
+            // KIEM TRA HO TEN  
+            var HoTen = document.myform.HoTen.value;
+            if (HoTen == "") {
+                document.getElementById("tbhoTen").innerHTML = "khong de trong ho ten ";
+                status = false;
+            } else {
+                document.getElementById("tbhoTen").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA EMAIL 
+            var Email = document.myform.Email.value;
+            var reemail = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");// bieu thuc chinh quy 
+            if (!Email.match(reemail)) {
+                document.getElementById("tbEmail").innerHTML = "email khong dung dinh dang";
+                status = false;
+            }
+            else {
+                document.getElementById("tbEmail").innerHTML = " ";
+                status = true;
+            }
+             // KIEM TRA SO PHONE 
+             var Sdt = document.myform.Sdt.value;
+            var resdt=new RegExp("0\\d{9,10}","g");
+            if (!Sdt.match(resdt)) {
+                document.getElementById("tbSdt").innerHTML = "Error phone";
+                status = false;
+            } else {
+                document.getElementById("tbSdt").innerHTML = "";
+                status = true;
+            }
+            var User = document.myform.User.value;
+            if (User == "") {
+                document.getElementById("tbUser").innerHTML = "khong de trong ho ten ";
+                status = false;
+            } else {
+                document.getElementById("tbUser").innerHTML = "";
+                status = true;
+            }
+             // KIEM TRA MAT KHAU 
+             var Pass = document.myform.Pass.value;
+            if (Pass.length < 8) {
+                document.getElementById("tbPass").innerHTML = "pass toi thieu 8 ky tu ";
+                status = false;
+            
+            } else {
+                document.getElementById("tbPass").innerHTML = "";
+                status = true;
+            }
+            // KIEM TRA CONFIRM PASS
+            var Repass = document.myform.Repass.value;
+            if (Repass == ""|| Repass!=Pass) {
+                document.getElementById("tbRepass").innerHTML = "Error  password ";
+                status = false;
+            } else {
+                document.getElementById("tbRepass").innerHTML = "";
+                status = true;
+            }
+             // diadiem
+             var chon=document.myform.chon.value;
+            if(chon==""){
+                document.getElementById("tbchon").innerHTML="không để trống trường này ";
+                trangthai=false;
+            }else{
+                document.getElementById("tbchon").innerHTML=" ";
+                trangthai=true;
+            }
+             // KIEM TRA HỌC PHÍ 
+             var HocPhi = document.myform.HocPhi.value;
+            if (HocPhi == "") {
+                document.getElementById("TBHocPhi").innerHTML = "khong de trong ho ten ";
+                status = false;
+            } else {
+                document.getElementById("TBHocPhi").innerHTML = "";
+                status = true;
+            }
+            return status ;
+        }
+    </script>
+</body>
+
+</html>
